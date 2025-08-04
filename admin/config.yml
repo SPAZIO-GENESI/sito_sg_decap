@@ -2,3 +2,17 @@ backend:
   name: github
   repo: SPAZIO-GENESI/sito_sg_decap
   branch: main
+
+  
+media_folder: "assets/images/uploads"  # Cartella dove salvare le immagini
+public_folder: "assets/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Post"
+    folder: "_posts"
+    create: true
+    fields:
+      - { name: "title", label: "Titolo", widget: "string" }
+      - { name: "date", label: "Data", widget: "datetime" }
+      - { name: "body", label: "Contenuto", widget: "markdown" }
