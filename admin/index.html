@@ -3,24 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Decap CMS</title>
-  <!-- Carica prima Decap CMS -->
-  <script client:load src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <!-- Poi Bootstrap (se necessario) -->
-
+  <!-- Carica Decap CMS correttamente -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
 </head>
 <body>
-  <!-- Aggiungi un elemento contenitore -->
   <div id="cms-container"></div>
-  
-  <script>
-    // Inizializza DOPO che la pagina è caricata
+
+  <script defer>
     document.addEventListener('DOMContentLoaded', function() {
-      CMS.init({
-        config: '/admin/config.yml'
-      });
+      if (typeof CMS !== 'undefined') {
+        CMS.init({
+          config: '/admin/config.yml'
+        });
+      } else {
+        console.error('Decap CMS non è stato caricato correttamente.');
+      }
     });
   </script>
-  <!-- Alla fine del body -->
-
 </body>
 </html>
