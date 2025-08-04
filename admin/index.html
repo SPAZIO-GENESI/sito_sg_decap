@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
   <title>Decap CMS</title>
-  <!-- Carica Decap CMS correttamente -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
+  <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js" defer></script>
 </head>
 <body>
-  
-
   <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       if (typeof CMS !== 'undefined') {
-        CMS.init({
-          config: '/admin/config.yml'
-        });
+        CMS.init({ config: '/admin/config.yml' });
       } else {
-        console.error('Decap CMS non è stato caricato correttamente.');
+        console.error('CMS non è definito');
       }
     });
   </script>
