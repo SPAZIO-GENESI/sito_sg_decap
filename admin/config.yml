@@ -1,0 +1,4 @@
+backend:
+  name: github
+  repo: SPAZIO-GENESI/sito_sg_decap
+  branch: main
