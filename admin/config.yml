@@ -2,7 +2,10 @@ backend:
   name: github
   repo: SPAZIO-GENESI/sito_sg_decap
   branch: main
-  auth_type: implicit  # Richiede token manuale
+  auth_type: repo  # Richiede token manuale
+  client_id: Ov23liHhBJ2OIvs4V06t
+  auth_endpoint: /api/auth
+  base_url: https://spazio-genesi.github.io
   site_domain: "https://spazio-genesi.github.io"  # Il tuo URL GitHub Pages
 
 media_folder: "static/uploads"
