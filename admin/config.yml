@@ -2,7 +2,9 @@ backend:
   name: github
   repo: SPAZIO-GENESI/sito_sg_decap
   branch: main
-  local_backend: true  # Permette auth locale durante lo sviluppo
+  auth_type: implicit  # Richiede token manuale
+  site_domain: "https://spazio-genesi.github.io"  # Il tuo URL GitHub Pages
+
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
