@@ -2,17 +2,15 @@ backend:
   name: github
   repo: SPAZIO-GENESI/sito_sg_decap
   branch: main
-
-  
-media_folder: "assets/images/uploads"  # Cartella dove salvare le immagini
-public_folder: "assets/images/uploads"
+  local_backend: true  # Permette auth locale durante lo sviluppo
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
-  - name: "posts"
-    label: "Post"
-    folder: "_posts"
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts/blog"
     create: true
     fields:
-      - { name: "title", label: "Titolo", widget: "string" }
-      - { name: "date", label: "Data", widget: "datetime" }
-      - { name: "body", label: "Contenuto", widget: "markdown" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
