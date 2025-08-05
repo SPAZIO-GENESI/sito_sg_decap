@@ -14,60 +14,39 @@ export default {
       return Response.redirect(githubAuthUrl, 302);
     }
 
-    if (url.pathname === "/callback") {
-      const code = url.searchParams.get("code");
-      const state = url.searchParams.get("state");
+if (url.pathname === "/callback") {
+  const code = url.searchParams.get("code");
+  const state = url.searchParams.get("state");
 
-      const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          client_id,
-          client_secret,
-          code,
-          redirect_uri,
-          state,
-        }),
-      });
+  const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      client_id,
+      client_secret,
+      code,
+      redirect_uri,
+      state,
+    }),
+  });
 
-      const tokenData = await tokenResponse.json();
+  const tokenData = await tokenResponse.json();
 
-      if (tokenData.error) {
-        return new Response(JSON.stringify(tokenData), {
-          status: 400,
-          headers: { "Content-Type": "application/json" },
-        });
-      }
+  if (tokenData.error) {
+    return new Response(JSON.stringify(tokenData), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
-      // Redirect al pannello admin con il token
-      const cmsRedirectUrl = `https://spazio-genesi.github.io/sito_sg_decap/admin/#access_token=${tokenData.access_token}`;
-      return Response.redirect(cmsRedirectUrl, 302);
-    }
+  // Redirect al pannello admin con il token
+  const cmsRedirectUrl = `https://spazio-genesi.github.io/sito_sg_decap/admin/#access_token=${tokenData.access_token}`;
+  return Response.redirect(cmsRedirectUrl, 302);
+}
 
-
-      const tokenData = await tokenResponse.json();
-
-      if (tokenData.error) {
-        return new Response(JSON.stringify(tokenData), {
-          status: 400,
-          headers: { "Content-Type": "application/json" },
-        });
-      }
-
-      return new Response(
-        JSON.stringify({
-          token: tokenData.access_token,
-        }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-    }
 
     return new Response("Not found", { status: 404 });
   },
