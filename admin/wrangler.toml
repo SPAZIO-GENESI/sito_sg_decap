@@ -2,6 +2,7 @@ name = "decap-oauth-proxy"
 account_id = "e3fa182b13fef9811fb10154b13e1dd5"
 compatibility_date = "2025-08-05"
 workers_dev = true
+main = "index.js"
 
 [vars]
 CLIENT_ID = "Ov23liHhBJ2OIvs4V06t"
