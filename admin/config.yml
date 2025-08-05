@@ -1,21 +1,21 @@
 backend:
   name: github
-  repo: SPAZIO-GENESI/sito_sg_decap
+  repo: spazio-genesi/sito_sg_decap
   branch: main
-  auth_type: repo  # Richiede token manuale
-  client_id: Ov23liHhBJ2OIvs4V06t
-  auth_endpoint: /api/auth
-  base_url: https://spazio-genesi.github.io
-  site_domain: "https://spazio-genesi.github.io"  # Il tuo URL GitHub Pages
+
+  base_url: https://auth-spaziogenesi.vercel.app
+  auth_endpoint: /auth
+  client_id: TUO_CLIENT_ID
 
 media_folder: "static/uploads"
-public_folder: "/uploads"
+public_folder: "/static/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "_posts/blog"
+  - name: "pages"
+    label: "Pagine"
+    folder: "content/pages"
     create: true
+    slug: "{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "Body", widget: "markdown" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Corpo", name: "body", widget: "markdown" }

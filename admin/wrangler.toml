@@ -1,0 +1,8 @@
+name = "decap-oauth-proxy"
+account_id = "e3fa182b13fef9811fb10154b13e1dd5"
+compatibility_date = "2025-08-05"
+workers_dev = true
+
+[vars]
+CLIENT_ID = "Ov23liHhBJ2OIvs4V06t"
+CLIENT_SECRET = "b12f5531c2dadc996a48c892b4dd271b632af6e8"
