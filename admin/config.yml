@@ -4,8 +4,9 @@ backend:
   branch: main
 
   base_url: https://decap-oauth-proxy.it-e3f.workers.dev
-  auth_endpoint: /auth
+  auth_endpoint: auth
   client_id: Ov23liHhBJ2OIvs4V06t
+  app_id: "Ov23liHhBJ2OIvs4V06t"  # Add this line
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
