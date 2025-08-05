@@ -9,9 +9,14 @@ export default {
       const CLIENT_SECRET = "b12f5531c2dadc996a48c892b4dd271b632af6e8";
       const REDIRECT_URI = "https://decap-oauth-proxy.it-e3f.workers.dev/callback";
 
-      if (url.pathname === "/auth") {
-        // ... existing auth code ...
-      }
+
+    if (url.pathname === "/auth") {
+      const state = crypto.randomUUID();
+      const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+        REDIRECT_URI
+      )}&state=${state}&scope=repo`;
+      return Response.redirect(githubAuthUrl, 302);
+    }
 
       if (url.pathname === "/callback") {
         console.log("Callback received. Full URL:", url.toString());
