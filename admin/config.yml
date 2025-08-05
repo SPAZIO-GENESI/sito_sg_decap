@@ -3,7 +3,7 @@ backend:
   repo: spazio-genesi/sito_sg_decap
   branch: main
 
-  base_url: https://auth-spaziogenesi.vercel.app
+  base_url: https://decap-oauth-proxy.your-subdomain.workers.dev
   auth_endpoint: /auth
   client_id: TUO_CLIENT_ID
 
