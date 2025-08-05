@@ -42,6 +42,21 @@ export default {
         });
       }
 
+      // Redirect al pannello admin con il token
+      const cmsRedirectUrl = `https://spazio-genesi.github.io/sito_sg_decap/admin/#access_token=${tokenData.access_token}`;
+      return Response.redirect(cmsRedirectUrl, 302);
+    }
+
+
+      const tokenData = await tokenResponse.json();
+
+      if (tokenData.error) {
+        return new Response(JSON.stringify(tokenData), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+
       return new Response(
         JSON.stringify({
           token: tokenData.access_token,
