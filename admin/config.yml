@@ -5,7 +5,7 @@ backend:
 
   base_url: https://decap-oauth-proxy.it-e3f.workers.dev
   auth_endpoint: /auth
-  client_id: TUO_CLIENT_ID
+  client_id: Ov23liHhBJ2OIvs4V06t
 
 media_folder: "static/uploads"
 public_folder: "/static/uploads"
