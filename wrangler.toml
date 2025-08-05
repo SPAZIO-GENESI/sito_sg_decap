@@ -7,3 +7,4 @@ main = "index.js"
 [vars]
 CLIENT_ID = "Ov23liHhBJ2OIvs4V06t"
 CLIENT_SECRET = "b12f5531c2dadc996a48c892b4dd271b632af6e8"
+REDIRECT_URI = "https://decap-oauth-proxy.it-e3f.workers.dev/callback"
