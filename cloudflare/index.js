@@ -4,7 +4,7 @@ export default {
 
     const client_id = "Ov23liHhBJ2OIvs4V06t";
     const client_secret = "b12f5531c2dadc996a48c892b4dd271b632af6e8";
-    const redirect_uri = "https://decap-oauth-proxy.it-e3f.workers.dev/callback";
+    const cmsRedirectUrl = `https://spazio-genesi.github.io/sito_sg_decap/admin/#access_token=${tokenData.access_token}`;
 
     if (url.pathname === "/auth") {
       const state = crypto.randomUUID();
